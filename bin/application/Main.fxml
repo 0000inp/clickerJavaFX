@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <ImageView fitHeight="417.0" fitWidth="730.0" layoutX="-84.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../HOME_BACKGROUND.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="sparkGIF" fitHeight="272.0" fitWidth="389.0" layoutX="308.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="goldoreIMG" fitHeight="178.0" fitWidth="366.0" layoutX="300.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../goldore.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="levelLabel" layoutX="14.0" layoutY="6.0" prefHeight="17.0" prefWidth="533.0" text="Level 1" textFill="WHITE" />
+      <ImageView fx:id="pickaxeIMG" fitHeight="229.0" fitWidth="230.0" layoutX="141.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true" rotate="26.6">
+         <image>
+            <Image url="@../../pickaxe.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="-0.12" contrast="-0.12" />
+         </effect>
+      </ImageView>
+      <TableView fx:id="teamTableView" layoutX="14.0" layoutY="23.0" prefHeight="262.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" editable="false" prefWidth="120.0" text="Name" />
+          <TableColumn fx:id="minespeedColumn" editable="false" prefWidth="75.0" text="MineSpeed" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="CharacterBuyComboBox" layoutX="14.0" layoutY="301.0" onAction="#Select" prefWidth="150.0" />
+      <Button fx:id="buyButton" layoutX="177.0" layoutY="301.0" mnemonicParsing="false" onAction="#buy" text="Buy" />
+      <Label fx:id="goldLabel" layoutX="233.0" prefHeight="47.0" prefWidth="285.0" text="Gold" textFill="#ffc300">
+         <font>
+            <Font size="58.0" />
+         </font>
+         <effect>
+            <SepiaTone level="0.79">
+               <input>
+                  <Glow level="1.0">
+                     <input>
+                        <DropShadow height="0.0" radius="10.4925" spread="0.02" width="43.97" />
+                     </input>
+                  </Glow>
+               </input>
+            </SepiaTone>
+         </effect>
+      </Label>
+      <Label fx:id="goldpersecLabel" layoutX="233.0" layoutY="69.0" prefHeight="17.0" prefWidth="150.0" text="goldpersecLabel" textFill="#ffc300" />
+      <Button layoutX="233.0" layoutY="69.0" mnemonicParsing="false" onAction="#click" opacity="0.0" prefHeight="262.0" prefWidth="339.0" text="Button" />
+      <Button fx:id="switchlevel2Button" layoutX="536.0" layoutY="11.0" mnemonicParsing="false" onAction="#switchScene2" text="Level2" />
+   </children>
+</AnchorPane>
