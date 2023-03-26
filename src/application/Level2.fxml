@@ -17,9 +17,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller2">
    <children>
-      <ImageView fx:id="backgroundIMG" fitHeight="417.0" fitWidth="730.0" layoutX="-84.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="backgroundIMG" fitHeight="418.0" fitWidth="720.0" layoutX="-90.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../HOME_BACKGROUND.png" />
+            <Image url="@../../HOME_BACKGROUND3.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="emberIMG1" fitHeight="340.0" fitWidth="521.0" layoutX="-104.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
@@ -34,7 +34,6 @@
             </Bloom>
          </effect>
       </ImageView>
-      <Label fx:id="levelLabel" layoutX="14.0" layoutY="6.0" prefHeight="17.0" prefWidth="533.0" text="Level 1" textFill="WHITE" />
       <Label fx:id="countdownLabel" layoutX="9.0" layoutY="24.0" prefHeight="47.0" prefWidth="285.0" text="Countdown" textFill="#ff5555">
          <font>
             <Font size="58.0" />

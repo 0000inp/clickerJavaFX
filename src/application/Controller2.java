@@ -97,9 +97,9 @@ public class Controller2 implements Initializable{
     private Button switchlevel1Button;
     
     //Image
-    private Image backgroundimg = new Image(new File("HOME_BACKGROUND.png").toURI().toString());
+    private Image backgroundimg = new Image(new File("HOME_BACKGROUND3.jpg").toURI().toString());
   	private Image bossimg = new Image(new File("bossGIF.gif").toURI().toString());
-  	private Image emberimg = new Image(new File("ember.gif").toURI().toString());
+  	private Image emberimg = new Image(new File("emberGIF.gif").toURI().toString());
   	
     //BOSS
     private Boss boss1;
