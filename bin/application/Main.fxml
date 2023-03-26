@@ -16,7 +16,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
-      <ImageView fitHeight="417.0" fitWidth="730.0" layoutX="-84.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="backgroundIMG" fitHeight="417.0" fitWidth="730.0" layoutX="-84.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../HOME_BACKGROUND.png" />
          </image>

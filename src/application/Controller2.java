@@ -23,6 +23,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
@@ -70,6 +71,15 @@ public class Controller2 implements Initializable{
 	}
     
     @FXML
+    private ImageView backgroundIMG;
+    
+    @FXML
+    private ImageView emberIMG1;
+
+    @FXML
+    private ImageView emberIMG2;
+    
+    @FXML
     private ImageView bossIMG;
     
     @FXML
@@ -86,6 +96,11 @@ public class Controller2 implements Initializable{
     @FXML
     private Button switchlevel1Button;
     
+    //Image
+    private Image backgroundimg = new Image(new File("HOME_BACKGROUND.png").toURI().toString());
+  	private Image bossimg = new Image(new File("bossGIF.gif").toURI().toString());
+  	private Image emberimg = new Image(new File("ember.gif").toURI().toString());
+  	
     //BOSS
     private Boss boss1;
     
@@ -120,7 +135,11 @@ public class Controller2 implements Initializable{
     
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		Main.currentScene = "Level2";
-		
+		//set Image
+		backgroundIMG.setImage(backgroundimg);
+		emberIMG1.setImage(emberimg);
+		emberIMG2.setImage(emberimg);
+		bossIMG.setImage(bossimg);
 		
 		boss1 = new Boss(100 * Player.getDifficultyScale() ,10);
 		System.out.println(boss1.getBossHP());

@@ -99,6 +99,9 @@ public class Controller implements Initializable{
 	private ComboBox<Character> CharacterBuyComboBox;
 	
 	@FXML
+	private ImageView backgroundIMG;
+	
+	@FXML
 	private ImageView pickaxeIMG;
 	
 	@FXML
@@ -107,17 +110,18 @@ public class Controller implements Initializable{
 	@FXML
 	private ImageView sparkGIF;
 	
-	private Image spark = new Image(new File("sparkGIF.gif").toURI().toString());
-	private Timeline sparkAnim = new Timeline(new KeyFrame(Duration.millis(450), event -> {
-		sparkGIF.setImage(spark);
-	}));
-	
 	private Bloom bloomFX = new Bloom();
 	
 	@FXML
 	void Select(ActionEvent e) {
 		
 	}
+	
+	//Image
+	private Image sparkimg = new Image(new File("sparkGIF.gif").toURI().toString());
+	private Image pickaxeimg = new Image(new File("pickaxe.png").toURI().toString());
+	private Image backgroundimg = new Image(new File("HOME_BACKGROUND.png").toURI().toString());
+	private Image goldoreimg = new Image(new File("goldore.png").toURI().toString());
 	
 	//SFX	
 	private MediaPlayer pickaxeSFX = new MediaPlayer(new Media(new File("pickaxeSFX.mp3").toURI().toString()));
@@ -145,8 +149,18 @@ public class Controller implements Initializable{
 		goldLabel.setTranslateY(0);
     }));
 	
+	//spark  animation
+	private Timeline sparkAnim = new Timeline(new KeyFrame(Duration.millis(450), event -> {
+		sparkGIF.setImage(sparkimg);
+	}));
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		//set Image
+		backgroundIMG.setImage(backgroundimg);
+		pickaxeIMG.setImage(pickaxeimg);
+		goldoreIMG.setImage(goldoreimg);
+		
 		Character dwarf = new Dwarf();
 		
 		CharacterBuyComboBox.getItems().addAll(dwarf);
@@ -185,7 +199,6 @@ public class Controller implements Initializable{
         //Label
         goldpersecLabel.setText("Gold per second : " + 0);
         
-        //ImageView
         sparkAnim.setOnFinished(event -> {
         	sparkGIF.setImage(null);
         });
@@ -201,7 +214,8 @@ public class Controller implements Initializable{
 		playSound(pickaxeSFX,0.1);
 		goldUpdate();
 		sparkAnim.play();
-		sparkGIF.setImage(spark);
+		sparkGIF.setImage(sparkimg);
+		pickaxeIMG.setImage(pickaxeimg);
 	}
 	
 	public void buy(ActionEvent e) {

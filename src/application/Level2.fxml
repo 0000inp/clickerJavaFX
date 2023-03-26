@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.effect.Bloom?>
-<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.effect.Light.Distant?>
@@ -18,12 +17,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller2">
    <children>
-      <ImageView fitHeight="417.0" fitWidth="730.0" layoutX="-84.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="backgroundIMG" fitHeight="417.0" fitWidth="730.0" layoutX="-84.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../HOME_BACKGROUND.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="340.0" fitWidth="521.0" layoutX="-104.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="emberIMG1" fitHeight="340.0" fitWidth="521.0" layoutX="-104.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../emberGIF.gif" />
          </image>
@@ -36,14 +35,6 @@
          </effect>
       </ImageView>
       <Label fx:id="levelLabel" layoutX="14.0" layoutY="6.0" prefHeight="17.0" prefWidth="533.0" text="Level 1" textFill="WHITE" />
-      <ImageView fx:id="pickaxeIMG" fitHeight="229.0" fitWidth="230.0" layoutX="-45.0" layoutY="432.0" pickOnBounds="true" preserveRatio="true" rotate="26.6">
-         <image>
-            <Image url="@../../pickaxe.png" />
-         </image>
-         <effect>
-            <ColorAdjust brightness="-0.12" contrast="-0.12" />
-         </effect>
-      </ImageView>
       <Label fx:id="countdownLabel" layoutX="9.0" layoutY="24.0" prefHeight="47.0" prefWidth="285.0" text="Countdown" textFill="#ff5555">
          <font>
             <Font size="58.0" />
@@ -61,7 +52,7 @@
          </effect>
       </Label>
       <Button fx:id="switchlevel1Button" layoutX="536.0" layoutY="11.0" mnemonicParsing="false" onAction="#switchScene1" text="Level1" />
-      <ImageView fitHeight="474.0" fitWidth="698.0" layoutX="122.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+      <ImageView fx:id="emberIMG2" fitHeight="474.0" fitWidth="698.0" layoutX="122.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
          <image>
             <Image url="@../../emberGIF.gif" />
          </image>
