@@ -42,6 +42,7 @@ public class Controller2 implements Initializable{
 	//switch scene
 	public void switchScene1(ActionEvent e) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+		
 		primaryStage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		primaryStage.setScene(scene);

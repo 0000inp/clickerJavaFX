@@ -63,12 +63,11 @@ public class Controller implements Initializable{
 	
 	//add player
 	private static Team Player;
-
+	
     public static void setPlayer(Team player) {
         Player = player;
     }
-	
-    private Random random = new Random();
+    
 	
 	@FXML
 	private Label levelLabel;
@@ -117,6 +116,13 @@ public class Controller implements Initializable{
 	void Select(ActionEvent e) {
 		
 	}
+	//observable list
+    private ObservableList<Character> charactersOL = FXCollections.observableArrayList();
+    
+    public void updateCharacterList() {
+    	charactersOL = FXCollections.observableList(Player.getTeamMember());
+		teamTableView.setItems(charactersOL);
+    }
 	
 	//Image
 	private Image sparkimg = new Image(new File("sparkGIF.gif").toURI().toString());
@@ -140,6 +146,7 @@ public class Controller implements Initializable{
 	private Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
 		Player.incrementGold(Player.getTeamGoldPerSec());
 		goldUpdate();
+		updateCharacterList();
 		if(Player.getTeamGoldPerSec() > 0) {
 			coinSFX.setStartTime(Duration.millis(500));
 			goldpersecLabel.setText("Gold per second : " + Integer.toString(Player.getTeamGoldPerSec()));
@@ -168,7 +175,6 @@ public class Controller implements Initializable{
 		CharacterBuyComboBox.getItems().addAll(dwarf,bomber);
 		
 		//-----------------tableview----------------------
-		ObservableList<Character> charactersOL = FXCollections.observableArrayList();
 		nameColumn.setCellValueFactory(new PropertyValueFactory<Character, String>("name"));
 		minespeedColumn.setCellValueFactory(new PropertyValueFactory<Character, Integer>("mineSpeed"));
 		teamTableView.setItems(charactersOL);
@@ -223,8 +229,7 @@ public class Controller implements Initializable{
 				Player.incrementGold(-1 * selectedOption.getBuyPrice());
 				Player.teamGoldPerSecUpdate();
 				goldUpdate();
-				ObservableList<Character> charactersOL = FXCollections.observableList(Player.getTeamMember());
-				teamTableView.setItems(charactersOL);
+				updateCharacterList();
 				playSound(coindropSFX,0.1); sparkGIF.setImage(null);
 			}
 			else {System.out.println("Not enough money");}
@@ -276,16 +281,4 @@ public class Controller implements Initializable{
 		node.setTranslateY(0);
 	}
 	
-	private void spawnCharacter() {
-		ImageView newChar = new ImageView(new Image(getClass().getResourceAsStream("dwarf.png")));
-		double xMin = 50;
-		double xMax = 350;
-		double yMin = 50;
-		double yMax = 350;
-		
-		double x = random.nextDouble();
-		double y = random.nextDouble();
-		newChar.setLayoutX(500);
-		newChar.setLayoutY(100);
-	}
 }
