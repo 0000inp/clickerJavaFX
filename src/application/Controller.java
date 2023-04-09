@@ -161,50 +161,19 @@ public class Controller implements Initializable{
 		backgroundIMG.setImage(backgroundimg);
 		pickaxeIMG.setImage(pickaxeimg);
 		goldoreIMG.setImage(goldoreimg);
-		
+		//----------------Character-----------------------
 		Character dwarf = new Dwarf();
 		Character bomber = new Dwarf("Bomber",500,5);
 		
 		CharacterBuyComboBox.getItems().addAll(dwarf,bomber);
-		//this.teamTableView = new TableView<Character>();
 		
 		//-----------------tableview----------------------
-		nameColumn = new TableColumn<Character, String>();
-		minespeedColumn = new TableColumn<Character, Integer>();
-		//nameColumn = new TableColumn<>("Name");
-		//minespeedColumn = new TableColumn<>("mineSpeed");
-		ObservableList<Character> charactersOL = FXCollections.observableArrayList(
-				dwarf
-				);
-		
-		//nameColumn.setCellValueFactory(new PropertyValueFactory<Character, String>("name"));
-		nameColumn.setCellFactory(column -> {
-		    return new TableCell<Character, String>() {
-		        @Override
-		        protected void updateItem(String name, boolean empty) {
-		            super.updateItem(name, empty);
-		            if (name == null || empty) {
-		                setText(null);
-		            } else {
-		                setText("asdasdasd");
-		            }
-		        }
-		    };
-		});
+		ObservableList<Character> charactersOL = FXCollections.observableArrayList();
+		nameColumn.setCellValueFactory(new PropertyValueFactory<Character, String>("name"));
 		minespeedColumn.setCellValueFactory(new PropertyValueFactory<Character, Integer>("mineSpeed"));
-		//charactersOL.add(dwarf);
 		teamTableView.setItems(charactersOL);
-		System.out.println(nameColumn.getCellObservableValue(teamTableView.getItems().get(0)));
 		
-		System.out.println(teamTableView.getItems().get(0).getName());
-		//-----------------tableview----------------------
-		
-		
-
-		
-		
-		
-		//play gameloop timeline
+		//play gameloop, timeline
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
         Main.currentScene = "Level1";

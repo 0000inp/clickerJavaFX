@@ -15,6 +15,10 @@ public class Dwarf extends Character{
 		this.mineSpeed = minespeed;
 	}
 	
+	public String getName() {
+		return name;
+	}
+	
 	public String toString() {
         return this.name +" / MineSpeed: " + this.mineSpeed + " / Price: " + this.buyPrice + " Gold";
     }

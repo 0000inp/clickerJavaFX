@@ -19,7 +19,7 @@ public class Character {
 	}
     
 	public String getName() {
-		return name;
+		return this.name;
 	}
 	
 	public void setName(String name) {
@@ -27,7 +27,7 @@ public class Character {
 	}
     
 	public int getBuyPrice() {
-		return buyPrice;
+		return this.buyPrice;
 	}
 	
 	public void setBuyPrice(int buyPrice) {
@@ -35,7 +35,7 @@ public class Character {
 	}
     
 	public int getMineSpeed() {
-		return mineSpeed;
+		return this.mineSpeed;
 	}
 	
 	public void setMineSpeed(int mineSpeed) {
