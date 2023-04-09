@@ -19,6 +19,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -162,20 +163,46 @@ public class Controller implements Initializable{
 		goldoreIMG.setImage(goldoreimg);
 		
 		Character dwarf = new Dwarf();
+		Character bomber = new Dwarf("Bomber",500,5);
 		
-		CharacterBuyComboBox.getItems().addAll(dwarf);
+		CharacterBuyComboBox.getItems().addAll(dwarf,bomber);
 		//this.teamTableView = new TableView<Character>();
+		
+		//-----------------tableview----------------------
 		nameColumn = new TableColumn<Character, String>();
 		minespeedColumn = new TableColumn<Character, Integer>();
-		
+		//nameColumn = new TableColumn<>("Name");
+		//minespeedColumn = new TableColumn<>("mineSpeed");
 		ObservableList<Character> charactersOL = FXCollections.observableArrayList(
-					new Character("Dwarfdd", 100,100,100)
+				dwarf
 				);
-		nameColumn.setCellValueFactory(new PropertyValueFactory<Character, String>("name"));
+		
+		//nameColumn.setCellValueFactory(new PropertyValueFactory<Character, String>("name"));
+		nameColumn.setCellFactory(column -> {
+		    return new TableCell<Character, String>() {
+		        @Override
+		        protected void updateItem(String name, boolean empty) {
+		            super.updateItem(name, empty);
+		            if (name == null || empty) {
+		                setText(null);
+		            } else {
+		                setText("asdasdasd");
+		            }
+		        }
+		    };
+		});
 		minespeedColumn.setCellValueFactory(new PropertyValueFactory<Character, Integer>("mineSpeed"));
-		//teamTableView.getColumns().addAll(nameColumn, minespeedColumn);
-		charactersOL.add(dwarf);
+		//charactersOL.add(dwarf);
 		teamTableView.setItems(charactersOL);
+		System.out.println(nameColumn.getCellObservableValue(teamTableView.getItems().get(0)));
+		
+		System.out.println(teamTableView.getItems().get(0).getName());
+		//-----------------tableview----------------------
+		
+		
+
+		
+		
 		
 		//play gameloop timeline
         timeline.setCycleCount(Timeline.INDEFINITE);

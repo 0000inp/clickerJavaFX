@@ -126,9 +126,10 @@ public class Controller2 implements Initializable{
 		public void changed(ObservableValue<? extends Number> arg0, Number arg1, Number arg2) {
 			hpLabelUpdate();
 			if(boss1.getBossHP() <= 0) {
-				Player.setGold(Player.getGold() + (int)(500 * Player.getDifficultyScale()));
-				System.out.println("Gold + " + Integer.toString((int)(500 * Player.getDifficultyScale())));
-				Player.setDifficultyScale(Player.getDifficultyScale() + Main.gameDiffScaling);
+				int goldReward = (int)(100 * Player.getDifficultyScale());
+				Player.setGold(Player.getGold() + goldReward);
+				System.out.println("Gold + " + Integer.toString(goldReward));
+				Player.setDifficultyScale(Player.getDifficultyScale() * Main.gameDiffScaling);
 				switchlevel1Button.fireEvent(new ActionEvent()); //switch to scene1
 			}
 		}};
@@ -141,7 +142,7 @@ public class Controller2 implements Initializable{
 		emberIMG2.setImage(emberimg);
 		bossIMG.setImage(bossimg);
 		
-		boss1 = new Boss(100 * Player.getDifficultyScale() ,10);
+		boss1 = new Boss(100 * Player.getDifficultyScale() ,15);
 		System.out.println(boss1.getBossHP());
 		
 		hpLabelUpdate();

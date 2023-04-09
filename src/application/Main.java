@@ -23,7 +23,7 @@ import javafx.scene.image.ImageView;
 
 public class Main extends Application {
 	
-	public static double gameDiffScaling = 0.5;
+	public static double gameDiffScaling = 1.5;
 	
 	public static File bgmfile = new File("bgm.mp3");
 	public static File bgm2file = new File("bgm2.mp3");

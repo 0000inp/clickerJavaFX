@@ -9,9 +9,11 @@ public class Dwarf extends Character{
 		this.mineSpeed = 1;
 	}
 	
-	/*public Dwarf() {
-		super("Dwarf",100,1,1);
-	}*/
+	public Dwarf(String name, int buyprice, int minespeed) {
+		this.name = name;
+		this.buyPrice = buyprice;
+		this.mineSpeed = minespeed;
+	}
 	
 	public String toString() {
         return this.name +" / MineSpeed: " + this.mineSpeed + " / Price: " + this.buyPrice + " Gold";

@@ -34,6 +34,18 @@
             </Bloom>
          </effect>
       </ImageView>
+      <ImageView fx:id="emberIMG2" fitHeight="474.0" fitWidth="698.0" layoutX="122.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+         <image>
+            <Image url="@../../emberGIF.gif" />
+         </image>
+         <effect>
+            <Bloom threshold="0.0">
+               <input>
+                  <Glow level="1.0" />
+               </input>
+            </Bloom>
+         </effect>
+      </ImageView>
       <Label fx:id="countdownLabel" layoutX="9.0" layoutY="24.0" prefHeight="47.0" prefWidth="285.0" text="Countdown" textFill="#ff5555">
          <font>
             <Font size="58.0" />
@@ -50,19 +62,6 @@
             </SepiaTone>
          </effect>
       </Label>
-      <Button fx:id="switchlevel1Button" layoutX="536.0" layoutY="11.0" mnemonicParsing="false" onAction="#switchScene1" text="Level1" />
-      <ImageView fx:id="emberIMG2" fitHeight="474.0" fitWidth="698.0" layoutX="122.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
-         <image>
-            <Image url="@../../emberGIF.gif" />
-         </image>
-         <effect>
-            <Bloom threshold="0.0">
-               <input>
-                  <Glow level="1.0" />
-               </input>
-            </Bloom>
-         </effect>
-      </ImageView>
       <ImageView fx:id="bossIMG" fitHeight="282.0" fitWidth="212.0" layoutX="193.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../bossGIF.gif" />
@@ -84,5 +83,6 @@
             </Lighting>
          </effect>
       </Label>
+      <Button fx:id="switchlevel1Button" layoutX="536.0" layoutY="11.0" mnemonicParsing="false" onAction="#switchScene1" text="Level1" />
    </children>
 </AnchorPane>

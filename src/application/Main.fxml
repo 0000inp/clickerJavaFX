@@ -37,8 +37,8 @@
       </ImageView>
       <TableView fx:id="teamTableView" layoutX="14.0" layoutY="23.0" prefHeight="262.0" prefWidth="200.0">
         <columns>
-          <TableColumn fx:id="nameColumn" editable="false" prefWidth="120.0" text="Name" />
-          <TableColumn fx:id="minespeedColumn" editable="false" prefWidth="75.0" text="MineSpeed" />
+          <TableColumn fx:id="nameColumn" prefWidth="120.0" text="Name" />
+          <TableColumn fx:id="minespeedColumn" prefWidth="75.0" text="MineSpeed" />
         </columns>
       </TableView>
       <ComboBox fx:id="CharacterBuyComboBox" layoutX="14.0" layoutY="301.0" onAction="#Select" prefWidth="150.0" />
@@ -60,7 +60,7 @@
          </effect>
       </Label>
       <Label fx:id="goldpersecLabel" layoutX="233.0" layoutY="69.0" prefHeight="17.0" prefWidth="150.0" text="goldpersecLabel" textFill="#ffc300" />
-      <Button layoutX="233.0" layoutY="69.0" mnemonicParsing="false" onAction="#click" opacity="0.0" prefHeight="262.0" prefWidth="339.0" text="Button" />
+      <Button layoutX="233.0" layoutY="69.0" mnemonicParsing="false" onAction="#click" opacity="0.0" prefHeight="262.0" prefWidth="339.0" text="Mine" />
       <Button fx:id="switchlevel2Button" layoutX="536.0" layoutY="11.0" mnemonicParsing="false" onAction="#switchScene2" text="Level2" />
    </children>
 </AnchorPane>
